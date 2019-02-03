@@ -6,7 +6,6 @@ from base64 import b64decode, b64encode
 from flask_cors import CORS
 
 
-
 #データベースの設定
 
 app = Flask(__name__)
@@ -16,8 +15,10 @@ CORS(app)
 #関数の設定
 
 @app.route("/")
-def top(uid):
-    user_id = "1425393612" #引数として渡すようにする
+def top():
+    # print(request)
+    user_id = request.args.get('uid')
+    # user_id = "1425393612" #引数として渡すようにする
     headers = { "Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8" }
     data = { "grant_type":"client_credentials" }
     oauth2_url = "https://api.twitter.com/oauth2/token"
