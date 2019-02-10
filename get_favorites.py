@@ -16,13 +16,12 @@ CORS(app)
 
 @app.route("/")
 def top():
-    # print(request)
     user_id = request.args.get('uid')
     # user_id = "1425393612" #引数として渡すようにする
     headers = { "Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8" }
     data = { "grant_type":"client_credentials" }
     oauth2_url = "https://api.twitter.com/oauth2/token"
-    r = requests.post(oauth2_url, data=data, headers=headers, auth=("ASWHVhMdDeUoDxEzeSmfgwuVq", "hq1bmBt3vj6QjRhQcchhyoULGQZlrjIC05OUkJyzShRdYZXe4q"))
+    r = requests.post(oauth2_url, data=data, headers=headers, auth=("CONSUMER KEY", "CONSUMER SECRET KEY"))
     bearer_token = r.json()["access_token"]
 
     # ===== 3. Userのtimelineを取得 =====
