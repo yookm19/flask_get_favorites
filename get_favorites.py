@@ -36,15 +36,16 @@ def top():
 
     # Twitter APIから取得したjson形式のデータをビュー側へ返す
     # 詰まってる。。。
+    return json.dumps(tweets,ensure_ascii=False)
     # return tweets[5]["text"]
-    favorites_tweets = []
-    for i in range(len(tweets)):
-        tweet = tweets[i]
-        tweet = tweet["text"]
-        # return tweet
-        favorites_tweets.append(tweet)
+    # favorites_tweets = []
+    # for i in range(len(tweets)):
+    #     tweet = json.dumps(tweets[i])
+    #     # tweet = tweet["text"]
+    #     # return tweet
+    #     favorites_tweets.append(tweet)
 
-    return favorites_tweets
+    # return favorites_tweets
 
 
 
