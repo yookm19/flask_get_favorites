@@ -27,7 +27,7 @@ def top():
     headers = { "Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8" }
     data = { "grant_type":"client_credentials" }
     oauth2_url = "https://api.twitter.com/oauth2/token"
-    r = requests.post(oauth2_url, data=data, headers=headers, auth=('kbIE5ZLubgsSDL1T73SQXH63J', 'fCO2y2zwcHXgceNNWkE2DLSgy9rf53pOKS7E36YAA5PAKIQkXU'))
+    r = requests.post(oauth2_url, data=data, headers=headers, auth=('Consumer API Key', 'Consumer Secret API Key'))
     bearer_token = r.json()["access_token"]
 
     # ===== 3. Userのtimelineを取得 =====
